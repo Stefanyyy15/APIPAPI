@@ -23,7 +23,6 @@ async function menuPrincipal() {
     }
   }
 }
-
 async function menuEstudiante() {
   while (true) {
     const opc1 = Number(
@@ -48,7 +47,6 @@ async function menuEstudiante() {
     };
   }
 }
-
 async function menuProfes() {
   while (true) {
     const opc1 = Number(
@@ -73,7 +71,6 @@ async function menuProfes() {
     };
   }
 }
-
 async function menuHechizos() {
   while (true) {
     const opc3 = Number(
@@ -92,7 +89,6 @@ async function menuHechizos() {
     };
   }
 }
-
 async function menuCasa() {
   while (true){
     const opc4 = Number(
@@ -120,7 +116,6 @@ async function menuCasa() {
     }  
 }
 }
-
 async function menuBusqueda() {
   while (true){
     const opc4 = Number(
@@ -172,14 +167,10 @@ cabeceras.set("Content-Encoding", "br");
 var urlEstudiantes = "https://hp-api.onrender.com/api/characters/students";
 var urlProfes = "https://hp-api.onrender.com/api/characters/staff";
 var urlHechizos = "https://hp-api.onrender.com/api/spells";
-var casaGryffindor =
-  "https://hp-api.onrender.com/api/characters/house/gryffindor";
-var casaSyltherin =
-  "https://hp-api.onrender.com/api/characters/house/slytherin";
-var casaRavenClaw =
-  "https://hp-api.onrender.com/api/characters/house/ravenclaw";
-var casaHufflepuff =
-  "https://hp-api.onrender.com/api/characters/house/hufflepuff";
+var casaGryffindor ="https://hp-api.onrender.com/api/characters/house/gryffindor";
+var casaSyltherin ="https://hp-api.onrender.com/api/characters/house/slytherin";
+var casaRavenClaw ="https://hp-api.onrender.com/api/characters/house/ravenclaw";
+var casaHufflepuff ="https://hp-api.onrender.com/api/characters/house/hufflepuff";
 
 async function peticion(url) {
   const respuesta = await fetch(url);
@@ -191,7 +182,6 @@ async function peticion(url) {
     return [];
   }
 }
-
 async function verPersonajes(url) {
   const categorias = await peticion(url);
   console.log(categorias);
@@ -222,7 +212,7 @@ async function verPersonajesFemeninos(url) {
   categorias.forEach((element) => {
     const genero = element.gender
     if (genero === "female") {
-      console.log(`Name: ${element.name}`);
+      console.log(`Name: ${element.name}\nGender: ${element.gender}`);
       console.log("************************************************************************")
     }
   });
@@ -234,7 +224,7 @@ async function verPersonajesMasculinos(url) {
   categorias.forEach((element) => {
     const genero = element.gender
     if (genero === "male") {
-      console.log(`Name: ${element.name}`);
+      console.log(`Name: ${element.name}\nGender: ${element.gender}`);
       console.log("************************************************************************")
     }
   });
